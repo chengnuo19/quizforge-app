@@ -1,0 +1,15 @@
+node_modules
+dist
+dist_electron
+.superpowers/
+*.local
+.DS_Store
+
+# one-time icon generator script (not needed in repo)
+gen-icons.mjs
+
+# Local credentials and machine configuration
+.env
+.env.*
+!.env.example
+config.yaml

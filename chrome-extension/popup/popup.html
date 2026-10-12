@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>QuizForge 剪藏</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <div class="brand">
+        <span class="brand-icon">✦</span>
+        <span class="brand-title">QuizForge 剪藏</span>
+      </div>
+      <div class="status-badge" id="status-badge">
+        <span class="status-dot status-dot--offline" id="status-dot"></span>
+        <span id="status-text">检查中...</span>
+      </div>
+    </div>
+
+    <div class="popup-body">
+      <div class="type-selector">
+        <button type="button" class="type-btn active" data-type="document" id="btn-type-doc">
+          📝 知识点笔记
+        </button>
+        <button type="button" class="type-btn" data-type="quiz" id="btn-type-quiz">
+          ❌ 测验错题
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label for="notebook-select">目标笔记本：</label>
+        <select id="notebook-select" class="select-field">
+          <option value="">加载中...</option>
+        </select>
+        <input type="text" id="new-notebook-input" class="input-field" placeholder="输入新笔记本名称" style="display:none; margin-top:6px;" />
+      </div>
+
+      <div class="form-group">
+        <label for="title-input">标题：</label>
+        <input type="text" id="title-input" class="input-field" placeholder="笔记或错题标题" />
+      </div>
+
+      <div class="form-group">
+        <div class="label-row">
+          <label for="content-input">内容 (Markdown)：</label>
+          <button type="button" class="text-btn" id="btn-grab-page">抓取当前页面</button>
+        </div>
+        <textarea id="content-input" class="textarea-field" rows="6" placeholder="输入或粘贴内容，或在 ChatGPT/Gemini 页面直接点击「存到 QuizForge」按钮..."></textarea>
+      </div>
+
+      <div class="msg-box" id="msg-box" style="display:none;"></div>
+    </div>
+
+    <div class="popup-footer">
+      <button type="button" class="submit-btn" id="btn-save">保存到 QuizForge</button>
+    </div>
+  </div>
+  <script src="../scripts/htmlToMarkdown.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

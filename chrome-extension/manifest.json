@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "QuizForge Web Clipper",
+  "version": "1.0.0",
+  "description": "一键将 ChatGPT 和 Google Gemini 网页端问答沉淀为 QuizForge 笔记与交互式错题。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "http://127.0.0.1:41414/*",
+    "http://localhost:41414/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": [
+        "scripts/htmlToMarkdown.js",
+        "scripts/content.js"
+      ],
+      "css": [
+        "scripts/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "QuizForge 剪藏",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

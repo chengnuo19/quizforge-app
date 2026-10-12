@@ -1,0 +1,136 @@
+/* Design tokens from DESIGN.md (Claude cream/coral editorial system). */
+
+@font-face {
+  font-family: 'TestTiemposHeadline';
+  src: url('../assets/fonts/tiempos/TestTiemposHeadline-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TestTiemposHeadline';
+  src: url('../assets/fonts/tiempos/TestTiemposHeadline-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TestTiemposText';
+  src: url('../assets/fonts/tiempos/TestTiemposText-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TestTiemposText';
+  src: url('../assets/fonts/tiempos/TestTiemposText-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TestTiemposText';
+  src: url('../assets/fonts/tiempos/TestTiemposText-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TestTiemposText';
+  src: url('../assets/fonts/tiempos/TestTiemposText-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* Brand & accent */
+  --primary: #cc785c;
+  --primary-active: #a9583e;
+  --primary-disabled: #e6dfd8;
+
+  /* Text */
+  --ink: #141413;
+  --body: #3d3d3a;
+  --body-strong: #252523;
+  --muted: #6c6a64;
+  --muted-soft: #8e8b82;
+  --on-primary: #ffffff;
+
+  /* Surfaces */
+  --canvas: #faf9f5;
+  --surface-soft: #f5f0e8;
+  --surface-card: #efe9de;
+  --surface-cream-strong: #e8e0d2;
+  --hairline: #e6dfd8;
+  --hairline-soft: #ebe6df;
+
+  /* Semantic */
+  --success: #5db872;
+  --success-tint: #eaf4ec;
+  --error: #c64545;
+  --error-tint: #f7e9e9;
+
+  /* Typography */
+  --font-display: 'TestTiemposHeadline', 'EB Garamond', 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --font-body: 'TestTiemposText', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* Spacing */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  /* Book tints (notebook cards) — soft editorial pastels on cream. */
+  --book-sand: #f0e6d6;
+  --book-sage: #e4ece0;
+  --book-sky: #e0e9f0;
+  --book-rose: #f3e3e3;
+  --book-lilac: #e9e4f1;
+  --book-amber: #f5ecd8;
+  /* Compatibility aliases for legacy/component CSS */
+  --bg-card: var(--surface-card);
+  --bg-input: var(--canvas);
+  --text-main: var(--ink);
+  --border: var(--hairline);
+}
+
+/* Dark theme — DESIGN.md dark navy surfaces, keeping coral + semantic accents. */
+[data-theme='dark'] {
+  --ink: #faf9f5;
+  --body: #c9c6bf;
+  --body-strong: #e8e5de;
+  --muted: #a09d96;
+  --muted-soft: #8e8b82;
+
+  --canvas: #141413;
+  --surface-soft: #1f1e1b;
+  --surface-card: #252320;
+  --surface-cream-strong: #2f2c28;
+  --hairline: #34312c;
+  --hairline-soft: #2a2824;
+
+  --primary-disabled: #3a352f;
+
+  --success-tint: #1c2a20;
+  --error-tint: #2c1d1d;
+
+  /* Book tints — muted dark variants. */
+  --book-sand: #2c2823;
+  --book-sage: #232a23;
+  --book-sky: #1f262d;
+  --book-rose: #2d2222;
+  --book-lilac: #272430;
+  --book-amber: #2c2820;
+
+  /* Compatibility aliases for legacy/component CSS */
+  --bg-card: var(--surface-card);
+  --bg-input: var(--canvas);
+  --text-main: var(--ink);
+  --border: var(--hairline);
+}
